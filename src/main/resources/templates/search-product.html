@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>get search form</title>
+</head>
+<body>
+    <h2>Search for a Product</h2>
+    <form action="#" th:action="@{/searchbyid}" method="post">
+    <label for="id">Enter Product ID:</label>
+    <input type="number" name="id" id="id" required>
+    <button type="submit">Search</button>
+    </form>
+    <div th:if="${product!=null}">
+    <h3>Product Details</h3>
+    <p><strong>ID:</strong><span th:text="${product.id}"></span></p>
+    <p><strong>Name:</strong><span th:text="${product.name}"></span></p>
+    <p><strong>Brand:</strong><span th:text="${product.brand}"></span></p>
+    <p><strong>MadeIn:</strong><span th:text="${product.madeIn}"></span></p>
+    <p><strong>Price:</strong><span th:text="${product.price}"></span></p>
+    <p><strong>Quantity:</strong><span th:text="${product.quanity}"></span></p>
+    <p><strong>DiscountRate:</strong><span th:text="${product.discountRate}"></span></p>
+    <p><strong>TaxRate:</strong><span th:text="${product.taxRate}"></span></p>
+    <p><strong>DiscountPrice:</strong><span th:text="${product.discountPrice}"></span></p>
+    <p><strong>OfferPrice:</strong><span th:text="${product.offerPrice}"></span></p>
+    <p><strong>FinalPrice:</strong><span th:text="${product.finalPrice}"></span></p>
+    <p><strong>StockValue:</strong><span th:text="${product.stockValue}"></span></p>
+    
+    </div>
+    <div th:if="${product==null}">
+    <p>No Product Found With the Given ID</p></div>
+</body>
+</html>
+
